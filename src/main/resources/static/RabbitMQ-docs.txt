@@ -1,0 +1,58 @@
+RABBITMQ DOCS:
+----------------------------
+RabbitMQ is a widely used open-source message broker that implements the Advanced Message Queuing Protocol (AMQP). 
+It serves as a reliable intermediary for sending and receiving messages between different systems or components within a distributed application.
+ RabbitMQ provides a scalable and robust messaging solution that helps decouple and connect various parts of an application or multiple applications.
+
+Here are some important concepts in RabbitMQ:
+
+1. **Message**: A message is the fundamental unit of data exchange in RabbitMQ. It consists of a payload (the actual data being transmitted) and optional metadata such as headers, routing key, and other properties.
+
+2. **Producer**: A producer is an application or component that sends messages to a RabbitMQ exchange. Producers create messages and specify the exchange and routing key to determine how messages are routed within RabbitMQ.
+
+3. **Exchange**: An exchange is a named entity in RabbitMQ that receives messages from producers and routes them to message queues. Exchanges use routing rules (based on the message's routing key) to determine which queues should receive the messages.
+
+4. **Queue**: A queue is a buffer that holds messages in RabbitMQ. It is where messages are stored until a consumer retrieves and processes them. Queues have names and can be created dynamically or pre-declared.
+
+5. **Consumer**: A consumer is an application or component that receives and processes messages from RabbitMQ queues. Consumers subscribe to queues and consume messages, typically performing some action or processing based on the message content.
+
+6. **Binding**: A binding is a connection between an exchange and a queue. It defines the rules for routing messages from the exchange to the queue based on the routing key.
+
+7. **Routing Key**: A routing key is a message attribute used by exchanges to determine which queues should receive the message. It is set by the producer and matched against the binding rules to route the message.
+
+8. **Acknowledgement**: Acknowledgement is a mechanism in RabbitMQ that allows consumers to confirm the successful processing of a message. Once a consumer acknowledges a message, RabbitMQ removes it from the queue.
+
+9. **Dead Letter Queue**: A dead letter queue is a special queue where messages are moved when they cannot be delivered to their intended destination due to various reasons, such as expired TTL (Time To Live) or unprocessable messages.
+
+10. **Exchange Types**: RabbitMQ supports several exchange types, including direct, topic, fanout, and headers exchanges. Each exchange type defines different routing and message distribution patterns.
+
+These concepts form the foundation of RabbitMQ's messaging model and provide the necessary building blocks for developing scalable and decoupled applications.
+By understanding and leveraging these concepts, developers can design robust messaging architectures that facilitate reliable communication between different components of a distributed system.
+
+
+1. RabbitMQ Installation
+https://www.rabbitmq.com/install-windows.html
+
+2. Springboot + RabbitMQ
+https://spring.io/guides/gs/messaging-rabbitmq/
+
+3. AMQP & RabbitMQ for Beginners
+https://www.cloudamqp.com/blog/part1-rabbitmq-for-beginners-what-is-rabbitmq.html
+
+
+4. Default location of RabbitMQ Server & Erlang
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.12.0\sbin
+C:\Program Files\Erlang OTP
+
+
+5. STEPS TO SETUP
+a. Install RabbitMQ server
+b. Install Erlang OTP
+c. Enable Management UI endpoint by running the below command (in default location specified above)
+  rabbitmq-plugins.bat enable rabbitmq_management
+d. Start the server (stop any previous running services by killing erl.exe in task manager Admin mode)
+  rabbitmq-server start
+e. Stop the server
+   rabbitmqctl stop
+f. Check status (optional) :A basic health check of both the node and CLI tool connectivity/authentication
+   rabbitmqctl.bat status
