@@ -1,4 +1,3 @@
-```markdown
 # Spring Boot + RabbitMQ
 
 This repository contains an example application that demonstrates how to use RabbitMQ with Spring Boot. It showcases the setup of RabbitMQ, sending and receiving messages, and handling different types of messages.
